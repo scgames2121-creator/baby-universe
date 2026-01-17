@@ -1,1 +1,52 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffc0cb, #ffb6c1, #ffa6c9, #ff9ac2);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  position: relative;
+}
 
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.floating-heart {
+  position: absolute;
+  color: #ff69b4;
+  pointer-events: none;
+  user-select: none;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+.floating-lyric {
+  position: absolute;
+  background: rgba(255, 182, 193, 0.95);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 20px;
+  max-width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  animation: fadeInOut 5s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+  }
